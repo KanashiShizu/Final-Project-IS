@@ -18,51 +18,67 @@ const items = [
 
 {
   n:"Handmade Candle",
-  d:"Warm vanilla scent designed for quiet evenings.",
+  d:"A hand-poured soy candle with warm vanilla, amber, and soft cedar notes designed to make evenings feel slower and more comforting. Poured into a reusable frosted glass jar and made in small batches for a cozy atmosphere during reading, journaling, or quiet nights indoors.",
   price:"28",
-  seller:"QuietEarthStudio",
+  seller:"CraftyCornStu",
   reviews:"231",
-  img:"images/"
+  img:"images/handmadecandle.jpg"
 },
 {
   n:"Herbal Tea Blend",
-  d:"Relaxing chamomile and lavender tea.",
+  d:"A calming herbal tea blend combining chamomile, lavender, and hints of lemon balm for a light floral flavor. Designed for slow mornings or late-night relaxation, each loose-leaf mix is packaged by hand in eco-friendly materials.",
   price:"16",
   seller:"SlowMorningCo",
   reviews:"104",
-  img:"images/tea.jpg"
+  img:"images/herbaltea.jpg"
 },
 {
   n:"Knitted Throw Blanket",
-  d:"Soft woven blanket for evenings indoors.",
-  price:"48",
+  d:"A thick woven throw blanket made with ultra-soft cotton yarn and neutral earth-tone colors. Designed to bring warmth and comfort to bedrooms, couches, and reading corners while maintaining a minimalist handmade aesthetic.",
+  price:"52",
   seller:"SoftHarbor",
   reviews:"401",
-  img:"images/blanket.jpg"
+  img:"images/knittedblanket.jpg"
 },
 {
   n:"Ceramic Tea Mug",
-  d:"Hand-thrown mug with matte glaze finish.",
-  price:"24",
+  d:"A hand-thrown ceramic mug finished with a matte glaze and subtle speckled texture. Each mug has slight variations that make every piece unique while offering a comfortable weight and shape for coffee, tea, or evening cocoa.",
+  price:"26",
   seller:"ClayMorning",
   reviews:"189",
-  img:"images/mug.jpg"
+  img:"images/ceramicteacup.jpg"
 },
 {
   n:"Lavender Incense",
-  d:"Slow-burning incense with calming aroma.",
+  d:"A bundle of slow-burning lavender incense sticks crafted to create a soft and calming atmosphere. Designed for meditation, studying, or unwinding after long days with a clean floral aroma that lingers gently in a room.",
   price:"14",
   seller:"QuietEarthStudio",
   reviews:"92",
-  img:"images/incense.jpg"
+  img:"images/lavenderincense.jpg"
 },
 {
   n:"Poetry Collection",
-  d:"A small hardcover collection of reflective poetry.",
-  price:"18",
+  d:"A hardcover poetry collection featuring reflective writing centered around loneliness, healing, routine, and quiet human moments. Bound with textured linen covers and minimalist page layouts for a calm reading experience.",
+  price:"21",
   seller:"MoonlitPress",
   reviews:"77",
-  img:"images/book.jpg"
+  img:"images/poetrycollection.jpg"
+},
+{
+  n:"Cherry Blossom Bonsai",
+  d:"A miniature artificial cherry blossom bonsai tree designed to bring a peaceful atmosphere to desks, shelves, and indoor spaces without requiring maintenance. The soft pink blossoms and curved dark wood trunk are inspired by traditional Japanese bonsai aesthetics, making it ideal for calm decorative spaces and minimalist interiors.",
+  price:"34",
+  seller:"PetalCraftStudio",
+  reviews:"156",
+  img:"images/cherrybonsai.webp"
+},
+{
+  n:"Motivational Shirt",
+  d:"A heavyweight oversized cotton t-shirt featuring minimalist typography with phrases centered around productivity, ambition, and self-improvement culture. Designed with a neutral color palette and modern streetwear-inspired fit commonly seen in contemporary online fashion and entrepreneurial lifestyle branding.",
+  price:"32",
+  seller:"ForwardMotionWear",
+  reviews:"268",
+  img:"images/motivationalshirt.webp"
 }
 
 ];
@@ -296,7 +312,6 @@ function showFeedback(msg){
     feedback.style.display = "none";
 
   },4000);
-
 }
 
 setInterval(() => {
@@ -346,7 +361,7 @@ function loadRelated(){
 
     let col = document.createElement("div");
 
-    col.className = "col-md-4";
+    col.className = "col-md-3";
 
     col.innerHTML = `
 

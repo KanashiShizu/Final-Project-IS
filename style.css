@@ -7,13 +7,25 @@
   --border:#ddd;
 }
 
+/* =========================
+   BASE LAYOUT
+   ========================= */
+
 body{
-  background:var(--bg);
-  color:var(--text);
   background:var(--card);
+  color:var(--text);
   font-family:'Inter',sans-serif;
   transition:all 0.8s ease;
+  position: relative
 }
+
+html, body{
+  height:100%;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
 
 .navbar{
   background:white;
@@ -24,7 +36,12 @@ body{
   font-size:28px;
   font-weight:700;
   letter-spacing:-1px;
+  color:#e49c31;
 }
+
+/* =========================
+   SEARCH + CATEGORIES
+   ========================= */
 
 .search-wrapper{
   width:50%;
@@ -60,23 +77,24 @@ body{
   background:#ddd7cc;
 }
 
+/* =========================
+   HERO
+   ========================= */
+
 .hero{
   height:320px;
   border-radius:24px;
   margin:30px;
   padding:50px;
-
   background:
-  linear-gradient(rgba(0,0,0,0.25),
-  rgba(0,0,0,0.25)),
-  url('images/hero.jpg');
+    linear-gradient(rgba(0,0,0,0.25),
+    rgba(255, 157, 0, 0.396)),
+    url('images/hero.jpg');
 
   background-size:cover;
   background-position:center;
-
   display:flex;
   align-items:center;
-
   color:white;
 }
 
@@ -90,6 +108,10 @@ body{
   font-size:18px;
   max-width:500px;
 }
+
+/* =========================
+   STORE PRODUCTS
+   ========================= */
 
 .product-grid{
   padding:20px 30px 80px;
@@ -112,9 +134,9 @@ body{
 
 .product-image{
   width:100%;
-  aspect-ratio: 1/1;
+  aspect-ratio:1/1;
   object-fit:cover;
-  display: block;
+  display:block;
 }
 
 .product-info{
@@ -141,6 +163,10 @@ body{
   font-size:13px;
 }
 
+/* =========================
+   PRODUCT PAGE
+   ========================= */
+
 #productPage{
   padding:40px;
 }
@@ -154,40 +180,82 @@ body{
   padding:20px;
 }
 
-#feedback{
-  position:fixed;
-  bottom:20px;
-  left:20px;
+/* =========================
+   RELATED SECTION
+   ========================= */
 
-  background:rgba(20,20,20,0.95);
-  color:white;
-
-  padding:14px 18px;
-  border-radius:12px;
-
-  max-width:340px;
-
-  display:none;
-
-  z-index:1000;
-
-  font-size:14px;
+.related-title{
+  margin-top:60px;
+  margin-bottom:24px;
+  font-weight:700;
+  font-size:24px;
 }
 
-#timer{
-  display:none;
+#related .product-image{
+  height:160px;
+}
+
+/* =========================
+   SCORE + CART
+   ========================= */
+
+#score{
+  position:fixed;
+  top:90px;
+  right:20px;
+  background:white;
+  padding:10px 16px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  font-size:14px;
+  z-index:999;
+}
+
+#cart{
   font-weight:600;
   letter-spacing:1px;
 }
 
-.notification{
-  position:fixed;
-  bottom:20px;
-  right:20px;
+/* =========================
+   FEEDBACK 
+   ========================= */
 
-  background:white;
+#feedback{
+  position:fixed;
+  left:24px;
+  bottom:24px;
+
+  background:rgba(20,20,20,0.96);
+  color:white;
+
+  padding:20px 24px;
   border-radius:14px;
 
+  max-width:460px;
+
+  display:none;
+
+  z-index:99999;
+
+  font-size:17px;
+  line-height:1.5;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   NOTIFICATIONS
+   ========================= */
+
+.notification{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+
+  background:white;
+  color:#222;
+
+  border-radius:14px;
   padding:16px;
 
   width:280px;
@@ -197,7 +265,13 @@ body{
   cursor:pointer;
 
   animation:slideIn 0.4s ease;
+
+  z-index:99999;
 }
+
+/* =========================
+   ANIMATION
+   ========================= */
 
 @keyframes slideIn{
   from{
@@ -209,6 +283,10 @@ body{
     opacity:1;
   }
 }
+
+/* =========================
+   OPTIMIZED MODE
+   ========================= */
 
 body.optimized{
   --bg:#eeeeee;
@@ -234,12 +312,18 @@ body.optimized .category-pill{
   border-radius:8px;
 }
 
+/* =========================
+   WORK MODE
+   ========================= */
+
 body.work-mode{
   --bg:#111;
   --text:#eee;
   --card:#1a1a1a;
   --soft:#222;
+
   letter-spacing:0.3px;
+  min-height:100vh;
 
   font-family:Arial,sans-serif;
 }
@@ -261,20 +345,31 @@ body.work-mode button{
   border-radius:0 !important;
 }
 
-#score{
-  position:fixed;
-  top:90px;
-  right:20px;
+body.work-mode .hero{
+  opacity:0;
+  pointer-events:none;
+  height:0;
+  overflow:hidden;
+  margin:0;
+  padding:0;
+}
 
-  background:white;
+#feedback{
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  right: auto;
+  top: auto;
+  z-index: 99999;
+  transform: none;
+}
 
-  padding:10px 16px;
-
-  border-radius:12px;
-
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-
-  font-size:14px;
-
-  z-index:999;
+.notification{
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  left: auto;
+  top: auto;
+  z-index: 99999;
+  transform: none;
 }
