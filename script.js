@@ -22,9 +22,8 @@ const items = [
   price:"28",
   seller:"QuietEarthStudio",
   reviews:"231",
-  img:"images/candle.jpg"
+  img:"images/"
 },
-
 {
   n:"Herbal Tea Blend",
   d:"Relaxing chamomile and lavender tea.",
